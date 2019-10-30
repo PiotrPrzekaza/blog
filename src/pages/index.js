@@ -1,8 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
@@ -10,11 +8,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <h1>Programista bez Kodu</h1>
     <p>Witam na moim blogu!</p>
-    <p>Czytaj, ucz się , komentuj!</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <p>Czytaj, ucz się , zostaw komentarz!</p>
   </Layout>
 )
 
