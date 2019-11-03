@@ -1,36 +1,45 @@
-import { Link } from "gatsby"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
-import React from "react"
+import '../styles/index.scss'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `#E92C2C`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from 'reactstrap';
 
+const Header = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
+  return (
+    <Navbar fixed="top" expand="sm" light>
+      <div className="container">
+        <NavbarBrand href="/">{props.siteTitle}</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavLink href="/team">Team</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/tags">Tags</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/about">About</NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </div>
+    </Navbar>
+
+  );
+}
 Header.propTypes = {
   siteTitle: PropTypes.string,
 }
@@ -38,5 +47,67 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: ``,
 }
+export default Header;
 
-export default Header
+
+
+
+// import {
+//   Collapse,
+//   Navbar,
+//   NavbarToggler,
+//   NavbarBrand,
+//   Nav,
+//   NavItem,
+//   NavLink,
+// } from 'reactstrap';
+
+
+// class Header extends React.Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.toggle = this.toggle.bind(this);
+//     this.state = {
+//       isOpen: false
+//     };
+//   }
+//   toggle() {
+//     this.setState({
+//       isOpen: !this.state.isOpen
+//     });
+
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <Navbar fixed="top" light expand="sm">
+//           <NavbarBrand href="/">{this.props.siteTitle}</NavbarBrand>
+//           <NavbarToggler onClick={this.toggle} />
+//           <Collapse isOpen={this.state.isOpen} navbar>
+//             <Nav className="ml-auto" navbar>
+//               <NavItem>
+//                 <NavLink href="/team">Team</NavLink>
+//               </NavItem>
+//               <NavItem>
+//                 <NavLink href="/tags">Tags</NavLink>
+//               </NavItem>
+//               <NavItem>
+//                 <NavLink href="/about">About</NavLink>
+//               </NavItem>
+//             </Nav>
+//           </Collapse>
+//         </Navbar>
+//       </div >
+//     );
+//   }
+
+// }
+// Header.propTypes = {
+//   siteTitle: PropTypes.string,
+// };
+
+// Header.defaultProps = {
+//   siteTitle: ``,
+// };
+// export default Header
