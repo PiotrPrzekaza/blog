@@ -3,9 +3,8 @@ import Layout from "../components/layout"
 import SEO from '../components/seo'
 
 const TagsPage = () => (
-    <Layout>
+    <Layout pageTitle="Tagi">
         <SEO title="Tags" />
-        <h1>Tagi</h1>
     </Layout>
 )
 
