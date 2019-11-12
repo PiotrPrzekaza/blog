@@ -4,15 +4,15 @@ import { Badge, Card, CardText, CardTitle, CardSubtitle, CardBody } from 'reacts
 import Img from 'gatsby-image'
 import { slugify } from '../util/utilityFunctions'
 
-const Post = ({ title, date, author, path, body, fluid, tags }) => {
+const Post = ({ title, date, author, slug, body, fluid, tags }) => {
     return (
         <Card>
-            <Link to={path}>
+            <Link to={slug}>
                 <Img className="card-image-top" fluid={fluid} />
             </Link>
             <CardBody>
                 <CardTitle>
-                    <Link to={path}>
+                    <Link to={slug}>
                         {title}
                     </Link>
                 </CardTitle>
@@ -30,7 +30,7 @@ const Post = ({ title, date, author, path, body, fluid, tags }) => {
                         </li>
                     ))}
                 </ul>
-                <Link to={path} className="btn btn-outline-primary float-lg-right">Read more</Link>
+                <Link to={slug} className="btn btn-outline-primary float-lg-right">Read more</Link>
             </CardBody>
         </Card>
     )
