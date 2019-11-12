@@ -6,7 +6,7 @@ import Img from 'gatsby-image'
 
 
 const Sidebar = () => (
-    <aside>
+    <div>
         <Card>
             <CardBody>
                 <CardTitle className="text-center text-uppercase mb-3">
@@ -55,7 +55,7 @@ const Sidebar = () => (
                 )} />
             </CardBody>
         </Card>
-    </aside>
+    </div>
 )
 
 const sidebarQuery = graphql`
