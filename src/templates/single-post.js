@@ -8,30 +8,32 @@ import Img from 'gatsby-image'
 import { slugify } from '../util/utilityFunctions'
 
 
-const SinglePost = () => {
+const SinglePost = ({ post, data }) => {
     return (
         <Layout>
             <SEO title={post.title} />
             <h1>{post.title}</h1>
             <Row>
                 <Col md="8">
-                    <Img className="card-image-top" fluid={post.image.childImageSharp.fluid} />
-                    <CardBody>
-                        <CardSubtitle>
-                            <span className="text-info">{date}</span> by{' '}
-                            <span className="text-info">{author}</span>
-                        </CardSubtitle>
-                        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-                        <ul className="post-tags">
-                            {post.tags.map(tag => (
-                                <li key={tag}>
-                                    <Link to={`/tag/${slugify(tag)}`}>
-                                        <Badge color="primary">{tag}</Badge>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </CardBody>
+                    <Card>
+                        <Img className="card-image-top" fluid={post.image.childImageSharp.fluid} />
+                        <CardBody>
+                            <CardSubtitle>
+                                <span className="text-info">{post.date}</span> by{' '}
+                                <span className="text-info">{post.author}</span>
+                            </CardSubtitle>
+                            <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+                            <ul className="post-tags">
+                                {post.tags.map(tag => (
+                                    <li key={tag}>
+                                        <Link to={`/tag/${slugify(tag)}`}>
+                                            <Badge color="primary">{tag}</Badge>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </CardBody>
+                    </Card>
                 </Col>
                 <Col md="4">
                     <Sidebar />
@@ -42,7 +44,7 @@ const SinglePost = () => {
 }
 export const postQuery = graphql`
     query blogPostBySlug($slug: String!) {
-        markdownRemark(fields: { slug: { eq:$slug }}){
+        markdownRemark(fields: { slug: { eq:$slug } }){
             id
             html
             frontmatter{
