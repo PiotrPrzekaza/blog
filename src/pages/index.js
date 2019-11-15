@@ -41,7 +41,7 @@ query{
         id
         frontmatter{
           title
-          date(formatString: "MMM Do YYYY")
+          date(formatString: "DD MM YYYY")
           author
           tags
           image{

@@ -34,6 +34,9 @@ const SinglePost = ({ data }) => {
                     </ul>
                 </CardBody>
             </Card>
+            <h3 className="text-center">
+                Podziel się z innymi
+            </h3>
         </Layout>
     )
 }
@@ -58,7 +61,7 @@ export const postQuery = graphql`
     }
     file(relativePath: {eq: $imageUrl}){
                 childImageSharp{
-                    fluid(maxWidth: 300){
+                    fluid(maxWidth: 200){
                         ...GatsbyImageSharpFluid
                     }
                 }

@@ -47,7 +47,7 @@ const Sidebar = ({ author, authorFluid }) => (
                         <Input type="email" name="email" placeholder="Your address@email..." />
                     </FormGroup>
                     <button className="btn btn-outline-success text-uppercase">
-                        Subscribe
+                        Subskrybuj
                     </button>
                 </Form>
             </CardBody>
@@ -55,7 +55,7 @@ const Sidebar = ({ author, authorFluid }) => (
         <Card>
             <CardBody>
                 <CardTitle className="text-uppercase text-center">
-                    Advertisement
+                    Miejsce na Reklame
                 </CardTitle>
                 <img src="https://via.placeholder.com/320x200" alt="Advert" style={{ width: "100%" }} />
             </CardBody>
@@ -63,7 +63,7 @@ const Sidebar = ({ author, authorFluid }) => (
         <Card>
             <CardBody>
                 <CardTitle className="text-center text-uppercase md-3">
-                    recent posts
+                    Ostatnio na blogu
                 </CardTitle>
                 <StaticQuery query={sidebarQuery} render={(data) => (
                     <div>
