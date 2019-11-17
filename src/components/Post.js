@@ -17,7 +17,7 @@ const Post = ({ title, date, author, slug, body, fluid, tags }) => {
                     </Link>
                 </CardTitle>
                 <CardSubtitle>
-                    <span className="text-info">{date}</span> by{' '}
+                    <span className="text-info">{date}</span> Autor:{' '}
                     <span className="text-info">{author}</span>
                 </CardSubtitle>
                 <CardText>{body}</CardText>
@@ -30,7 +30,7 @@ const Post = ({ title, date, author, slug, body, fluid, tags }) => {
                         </li>
                     ))}
                 </ul>
-                <Link to={slug} className="btn btn-outline-primary float-lg-right">Read more</Link>
+                <Link to={slug} className="btn btn-outline-primary float-lg-right">Czytaj dalej ...</Link>
             </CardBody>
         </Card>
     )

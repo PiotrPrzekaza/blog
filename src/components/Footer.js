@@ -7,7 +7,7 @@ const Footer = () => (
         <h4 className="test-center">
             devHot
         </h4>
-        <p className="text-center">Follow us on social media</p>
+        <p className="text-center text-uppercase">Moje media społecznościowe</p>
         <div className="footer-social-links">
             <ul className="social-links-list">
                 <li><a href="https://www.facebook.com/piotr.przekaza" target="_blank" rel="noopener noreferrer" className="facebook">

@@ -9,18 +9,24 @@
       a {
         opacity: 0.6;
         transition: all 0.1s ease-in;
+        font-size: 2em;
+
         &:hover {
           opacity: 1;
         }
+
         &.facebook {
           color: rgb(66, 103, 178);
         }
+
         &.twitter {
           color: rgb(56, 161, 243);
         }
-        &.google {
-          color: rgb(221, 75, 57);
+
+        &.instagram {
+          color: #db0e0e;
         }
+
         &.linkedin {
           color: rgb(0, 119, 181);
         }
