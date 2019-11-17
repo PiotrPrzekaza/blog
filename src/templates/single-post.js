@@ -7,6 +7,7 @@ import { Badge, Card, CardBody, CardSubtitle } from 'reactstrap'
 import Img from 'gatsby-image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faInstagram, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { DiscussionEmbed } from 'disqus-react'
 const authors = require('../util/authors');
 
 
@@ -15,7 +16,15 @@ const SinglePost = ({ data, pageContext }) => {
     const post = data.markdownRemark.frontmatter;
     const author = authors.find(x => x.name === post.author);
 
-    const baseUrl = 'https://www.gatsbyjs.org/'
+    const baseUrl = 'https://gatsbytutorial.co.uk/';
+
+    const disqusShortname = 'https-gatsbytutorial-co-uk';
+    const disqusConfig = {
+        identifier: data.markdownRemark.id,
+        title: post.title,
+        url: baseUrl + pageContext.slug
+    }
+
     return (
         <Layout pageTitle={post.title} postAuthor={author} authorImageFluid={data.file.childImageSharp.fluid}>
             <SEO title={post.title} />
@@ -55,6 +64,7 @@ const SinglePost = ({ data, pageContext }) => {
                     </a></li>
                 </ul>
             </div>
+            <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
         </Layout>
     )
 }
