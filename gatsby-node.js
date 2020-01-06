@@ -35,6 +35,7 @@ exports.createPages = ({
     tagsPage: path.resolve("src/templates/tags-page.js"),
     tagPosts: path.resolve("src/templates/tag-post.js"),
     listPost: path.resolve("src/templates/list-post.js"),
+    authorPost: path.resolve("src/templates/author-post.js"),
   }
   return graphql(`
     {
@@ -116,7 +117,6 @@ exports.createPages = ({
 
       if (isFirstPage) return
 
-
       createPage({
         path: `/page/${currentPage}`,
         component: templates.listPost,
@@ -125,6 +125,17 @@ exports.createPages = ({
           skip: index * postPerPage,
           currentPage,
           numberOfPages
+        }
+      })
+    })
+
+    authors.forEach(author => {
+      createPage({
+        path: `/author/${slugify(author.name)}`,
+        component: templates.authorPost,
+        context: {
+          authorName: author.name,
+          imageUrl: author.imageUrl
         }
       })
     })
