@@ -123,7 +123,8 @@ exports.createPages = ({
         context: {
           limit: postPerPage,
           skip: index * postPerPage,
-          currentPage
+          currentPage,
+          numberOfPages
         }
       })
     })

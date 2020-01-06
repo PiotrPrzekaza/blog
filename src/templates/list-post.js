@@ -2,13 +2,15 @@ import React from "react"
 import Layout from "../components/layout"
 import Post from "../components/Post"
 import { graphql } from "gatsby"
+import PaginationLinks from "../components/PaginationLinks"
 
 const listPost = props => {
   const posts = props.data.allMarkdownRemark.edges
-  const { currentPage } = props.pageContext
+  const { currentPage, numberOfPages } = props.pageContext
 
   return (
     <Layout pageTitle={`Strona ${currentPage}`}>
+      {" "}
       {posts.map(({ node }) => (
         <Post
           key={node.id}
@@ -20,7 +22,11 @@ const listPost = props => {
           tags={node.frontmatter.tags}
           fluid={node.frontmatter.image.childImageSharp.fluid}
         />
-      ))}
+      ))}{" "}
+      <PaginationLinks
+        currentPage={currentPage}
+        numberOfPages={numberOfPages}
+      />
     </Layout>
   )
 }
