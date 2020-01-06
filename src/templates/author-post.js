@@ -4,7 +4,32 @@ import Post from "../components/Post"
 import authors from "../util/authors"
 import { graphql } from "gatsby"
 
-const authorPost = ({ data, pageContext }) => {}
+const authorPost = ({ data, pageContext }) => {
+  const { totalCount } = data.allMarkdownRemark
+  const author = authors.find(x => x.name === pageContext.authorName)
+  const pageHeader = `${totalCount} Wpisy ${pageContext.authorName}`
+
+  return (
+    <Layout
+      pageTitle={pageHeader}
+      postAuthor={author}
+      authorImageFluid={data.file.childImageSharp.fluid}
+    >
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <Post
+          key={node.id}
+          slug={node.fields.slug}
+          title={node.frontmatter.title}
+          author={node.frontmatter.author}
+          date={node.frontmatter.date}
+          body={node.excerpt}
+          tags={node.frontmatter.tags}
+          fluid={node.frontmatter.image.childImageSharp.fluid}
+        />
+      ))}
+    </Layout>
+  )
+}
 export const authorQuery = graphql`
   query($authorName: String!, $imageUrl: String!) {
     allMarkdownRemark(
