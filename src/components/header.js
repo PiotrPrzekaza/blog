@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import '../styles/index.scss'
+import "../styles/index.scss"
 
 import {
   Collapse,
@@ -10,12 +10,12 @@ import {
   Nav,
   NavItem,
   NavLink,
-} from 'reactstrap';
+} from "reactstrap"
 
-const Header = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Header = props => {
+  const [isOpen, setIsOpen] = useState(false)
 
-  const toggle = () => setIsOpen(!isOpen);
+  const toggle = () => setIsOpen(!isOpen)
 
   return (
     <Navbar fixed="top" expand="sm" light>
@@ -25,20 +25,19 @@ const Header = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="/news">News</NavLink>
+              <NavLink href="/news">Newsy</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/tags">Tags</NavLink>
+              <NavLink href="/tags">Tagi</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/about">About</NavLink>
+              <NavLink href="/about">Autorzy</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
       </div>
     </Navbar>
-
-  );
+  )
 }
 Header.propTypes = {
   siteTitle: PropTypes.string,
@@ -47,10 +46,7 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: ``,
 }
-export default Header;
-
-
-
+export default Header
 
 // import {
 //   Collapse,
@@ -61,7 +57,6 @@ export default Header;
 //   NavItem,
 //   NavLink,
 // } from 'reactstrap';
-
 
 // class Header extends React.Component {
 //   constructor(props) {
