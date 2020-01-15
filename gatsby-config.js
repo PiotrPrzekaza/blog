@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `devHot`,
-    description: `my blog`,
+    description: ` devhotblog, programowanie, nauka programowania, `,
     author: `Piotr`,
   },
   plugins: [
@@ -41,6 +41,13 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-156096393-1",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: `ca-pub-5106360774377239`,
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
