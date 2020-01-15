@@ -118,11 +118,7 @@ const Sidebar = ({ author, authorFluid }) => (
         />
       </CardBody>
     </Card>
-    <Card>
-      <CardBody>
-        <Ads />
-      </CardBody>
-    </Card>
+    <Ads />
   </div>
 )
 
