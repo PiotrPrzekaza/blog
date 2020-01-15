@@ -118,19 +118,15 @@ const Sidebar = ({ author, authorFluid }) => (
         />
       </CardBody>
     </Card>
-    <Ads />
-    <Ads
-      client="ca-pub-5106360774377239"
-      slot="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      format="auto"
-    ></Ads>
-    <CardBody>
-      <Ads
-        client="ca-pub-5106360774377239"
-        slot="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        format="auto"
-      ></Ads>
-    </CardBody>
+    <Card>
+      <CardBody>
+        <Ads
+          client="ca-pub-5106360774377239"
+          slot="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          format="auto"
+        ></Ads>
+      </CardBody>
+    </Card>
   </div>
 )
 
