@@ -2,7 +2,7 @@ const authors = [
     {
         name: 'Piotr Przekaza',
         imageUrl: 'me.jpg',
-        bio: 'Javascript Developer - programista amator, samouk. Student I roku informatyki na PWSIP w Łomży.',
+        bio: 'Junior Javascript Developer - programista amator, samouk. Student I roku informatyki na PWSIP w Łomży. Miłośnik technologii  i sprzętu.',
         facebook: 'https://www.facebook.com/piotr.przekaza',
         instagram: 'https://www.instagram.com/piotrprzekaza/',
         twitter: 'https://twitter.com/PrzekazaPiotr',
