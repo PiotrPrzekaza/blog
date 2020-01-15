@@ -18,6 +18,7 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons"
+import Ads from "../components/ads"
 
 const Sidebar = ({ author, authorFluid }) => (
   <div>
@@ -119,14 +120,7 @@ const Sidebar = ({ author, authorFluid }) => (
     </Card>
     <Card>
       <CardBody>
-        <CardTitle className="text-uppercase text-center">
-          Miejsce na Reklame
-        </CardTitle>
-        <img
-          src="https://via.placeholder.com/320x200"
-          alt="Advert"
-          style={{ width: "100%" }}
-        />
+        <Ads />
       </CardBody>
     </Card>
   </div>
