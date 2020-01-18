@@ -1,4 +1,4 @@
-const devLibrary = [
+const devBooks = [
   {
     title: "Czysty Kod. Podręcznik dobrego programisty.",
     author: "Robert C. Martin",

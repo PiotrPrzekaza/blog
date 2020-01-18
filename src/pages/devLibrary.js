@@ -1,12 +1,11 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import devLibrary from "../util/devBooks"
+import devLibrary from "../util/devBooks.js"
 import {
   Card,
   CardBody,
   CardTitle,
-  CardSubtitle,
   Button,
   Row,
   CardSubtitle,
@@ -29,7 +28,7 @@ const DevLibPage = () => (
             <Button
               className="text-uppercase"
               color="primary"
-              href={`/author/${slugify(devLibrary[0].title)}`}
+              href={`/books/${slugify(devLibrary[0].title)}`}
             >
               Zobacz Więcej
             </Button>
