@@ -3,6 +3,7 @@ const {
   slugify
 } = require("./src/util/utilityFunctions")
 const authors = require("./src/util/authors")
+const devBooks = require("./src/util/devBooks")
 const _ = require("lodash")
 
 exports.onCreateNode = ({
@@ -36,6 +37,7 @@ exports.createPages = ({
     tagPosts: path.resolve("src/templates/tag-post.js"),
     listPost: path.resolve("src/templates/list-post.js"),
     authorPost: path.resolve("src/templates/author-post.js"),
+    bookPage: path.resolve("src/templates/book-page.js"),
   }
   return graphql(`
     {
@@ -136,6 +138,18 @@ exports.createPages = ({
         context: {
           authorName: author.name,
           imageUrl: author.imageUrl
+        }
+      })
+    })
+
+    bookPage.forEach(book=>{
+      createPage({
+        path:`/books/${slugify(book.simpleTitle)}`,
+        component: templates.bookPage,
+        context:{
+          title: devBooks.bookTitle,
+          authorName: devBooks.author,
+          imgUrl: devBooks.imgUrl,
         }
       })
     })

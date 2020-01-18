@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import devLibrary from "../util/devBooks.js"
+import devBooks from "../util/devBooks.js"
 import {
   Card,
   CardBody,
@@ -23,12 +23,12 @@ const DevLibPage = () => (
       <div className="col-md-8">
         <Card style={{ minHeight: "100%" }}>
           <CardBody>
-            <CardTitle>{devLibrary[0].title}</CardTitle>
-            <CardSubtitle>{devLibrary[0].author}</CardSubtitle>
+            <CardTitle>{devBooks[0].bookTitle}</CardTitle>
+            <CardSubtitle>{devBooks[0].author}</CardSubtitle>
             <Button
               className="text-uppercase"
               color="primary"
-              href={`/books/${slugify(devLibrary[0].title)}`}
+              href={`/books/${slugify(devBooks[0].simpleTitle)}`}
             >
               Zobacz Więcej
             </Button>

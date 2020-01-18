@@ -16,7 +16,7 @@ const SinglePost = ({ data, pageContext }) => {
     const post = data.markdownRemark.frontmatter;
     const author = authors.find(x => x.name === post.author);
 
-    const baseUrl = 'https://gatsbytutorial.co.uk/';
+    const baseUrl = 'https://devhotblog.netlify.com/';
 
     const disqusShortname = 'https-gatsbytutorial-co-uk';
     const disqusConfig = {
