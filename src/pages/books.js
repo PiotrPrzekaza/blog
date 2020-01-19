@@ -9,22 +9,29 @@ import {
   Button,
   Row,
   CardSubtitle,
+  CardText,
+  CardHeader,
 } from "reactstrap"
 import cleanCodeImg from "../images/books/CleanCode.jpg"
 import { slugify } from "../util/utilityFunctions"
 
 const DevLibPage = () => (
-  <Layout pageTitle="Piotr Przekaza">
-    <SEO title="O Mnie" />
+  <Layout pageTitle="Polecane Książki.">
+    <SEO title="ksiażki" />
     <Row className="mb-4">
       <div className="col-md-3">
         <img src={cleanCodeImg} style={{ maxWidth: "100%" }} alt="" />
       </div>
       <div className="col-md-8">
         <Card style={{ minHeight: "100%" }}>
-          <CardBody>
+        <CardHeader>
             <CardTitle>{devBooks[0].bookTitle}</CardTitle>
             <CardSubtitle>{devBooks[0].author}</CardSubtitle>
+             <CardText> Moja ocena: {devBooks[0].myRank}</CardText>
+           </CardHeader>
+          <CardBody>
+
+
             <Button
               className="text-uppercase"
               color="primary"

@@ -9,7 +9,7 @@ const bookPage = ({ data, pageContext }) => {
   return (
     <Layout
       pageTitle={pageHeader}
-      postAuthor={author}
+      postAuthor={book}
       authorImageFluid={data.file.childImageSharp.fluid}
     >
       {data.allMarkdownRemark.edges.map(({ node }) => (
