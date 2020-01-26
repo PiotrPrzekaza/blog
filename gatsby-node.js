@@ -1,17 +1,10 @@
 const path = require("path")
-const {
-  slugify
-} = require("./src/util/utilityFunctions")
+const { slugify } = require("./src/util/utilityFunctions")
 const authors = require("./src/util/authors")
 const _ = require("lodash")
 
-exports.onCreateNode = ({
-  node,
-  actions
-}) => {
-  const {
-    createNodeField
-  } = actions
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions
   if (node.internal.type === "MarkdownRemark") {
     const slugFromTitle = slugify(node.frontmatter.title)
     createNodeField({
@@ -22,13 +15,8 @@ exports.onCreateNode = ({
   }
 }
 
-exports.createPages = ({
-  actions,
-  graphql
-}) => {
-  const {
-    createPage
-  } = actions
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
 
   const templates = {
     SinglePost: path.resolve("src/templates/single-post.js"),
@@ -58,9 +46,7 @@ exports.createPages = ({
 
     const posts = res.data.allMarkdownRemark.edges
 
-    posts.forEach(({
-      node
-    }) => {
+    posts.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
         component: templates.SinglePost,
@@ -73,7 +59,7 @@ exports.createPages = ({
     })
 
     let tags = []
-    _.each(posts, (edge) => {
+    _.each(posts, edge => {
       if (_.get(edge, "node.frontmatter.tags")) {
         tags = tags.concat(edge.node.frontmatter.tags)
       }
@@ -101,8 +87,8 @@ exports.createPages = ({
         path: `/tag/${slugify(tag)}`,
         component: templates.tagPosts,
         context: {
-          tag
-        }
+          tag,
+        },
       })
     })
 
@@ -110,10 +96,10 @@ exports.createPages = ({
     const numberOfPages = Math.ceil(posts.length / postPerPage)
 
     Array.from({
-      length: numberOfPages
+      length: numberOfPages,
     }).forEach((_, index) => {
-      const isFirstPage = index === 0;
-      const currentPage = index + 1;
+      const isFirstPage = index === 0
+      const currentPage = index + 1
 
       if (isFirstPage) return
 
@@ -124,8 +110,8 @@ exports.createPages = ({
           limit: postPerPage,
           skip: index * postPerPage,
           currentPage,
-          numberOfPages
-        }
+          numberOfPages,
+        },
       })
     })
 
@@ -135,8 +121,8 @@ exports.createPages = ({
         component: templates.authorPost,
         context: {
           authorName: author.name,
-          imageUrl: author.imageUrl
-        }
+          imageUrl: author.imageUrl,
+        },
       })
     })
   })

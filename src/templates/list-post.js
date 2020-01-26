@@ -10,7 +10,6 @@ const listPost = props => {
 
   return (
     <Layout pageTitle={`Strona ${currentPage}`}>
-      {" "}
       {posts.map(({ node }) => (
         <Post
           key={node.id}
@@ -22,7 +21,7 @@ const listPost = props => {
           tags={node.frontmatter.tags}
           fluid={node.frontmatter.image.childImageSharp.fluid}
         />
-      ))}{" "}
+      ))}
       <PaginationLinks
         currentPage={currentPage}
         numberOfPages={numberOfPages}
