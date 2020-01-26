@@ -1,13 +1,5 @@
 import React from "react"
-import {
-  Card,
-  CardTitle,
-  CardBody,
-  CardText,
-  Form,
-  FormGroup,
-  Input,
-} from "reactstrap"
+import { Card, CardTitle, CardBody, CardText } from "reactstrap"
 import { graphql, StaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -18,7 +10,6 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons"
-import Ads from "../components/ads"
 
 const Sidebar = ({ author, authorFluid }) => (
   <div>
