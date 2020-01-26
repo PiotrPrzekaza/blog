@@ -25,9 +25,6 @@ const Header = props => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="/books">Książki</NavLink>
-            </NavItem>
-            <NavItem>
               <NavLink href="/tags">Tagi</NavLink>
             </NavItem>
             <NavItem>
