@@ -12,8 +12,8 @@ const IndexPage = () => {
     return (
         <Layout pageTitle="devHot - Programista bez Kodu">
             <SEO title="Blog" />
-            <p>Witam na moim blogu!</p>
-            <p>Czytaj, ucz się , zostaw komentarz!</p>
+            <h3>Witam na moim blogu!</h3>
+            <h4>Czytaj, ucz się , zostaw komentarz!</h4>
             <StaticQuery
                 query={indexQuery}
                 render={data => {
@@ -43,7 +43,7 @@ const IndexPage = () => {
 
 const indexQuery = graphql`
     query {
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 2) {
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 3) {
             totalCount
             edges {
                 node {
