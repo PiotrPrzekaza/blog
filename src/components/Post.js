@@ -12,9 +12,7 @@ const Post = ({ title, date, author, slug, body, fluid, tags }) => {
             </Link>
             <CardBody>
                 <CardTitle>
-                    <Link to={slug}>
-                        {title}
-                    </Link>
+                    <Link to={slug}>{title}</Link>
                 </CardTitle>
                 <CardSubtitle>
                     <span className="text-info">{date}</span> Autor:{' '}
@@ -25,14 +23,18 @@ const Post = ({ title, date, author, slug, body, fluid, tags }) => {
                     {tags.map(tag => (
                         <li>
                             <Link to={`/tag/${slugify(tag)}`}>
-                                <Badge color="primary" className="text-uppercase">{tag}</Badge>
+                                <Badge color="primary" className="text-uppercase">
+                                    {tag}
+                                </Badge>
                             </Link>
                         </li>
                     ))}
                 </ul>
-                <Link to={slug} className="btn btn-outline-primary float-lg-right">Czytaj dalej ...</Link>
+                <Link to={slug} className="btn btn-outline-primary float-lg-right">
+                    Czytaj dalej ...
+                </Link>
             </CardBody>
         </Card>
     )
 }
-export default Post;
+export default Post
